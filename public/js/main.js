@@ -6,7 +6,8 @@ MOB.Router = Backbone.Router.extend({
     routes: {
         '': 'homePage',
         'view': 'viewNotes',
-        'add': 'addNote'
+        'add': 'addNote',
+        'edit/:noteId': 'editNote'
     },
 
     initialize: function () {
@@ -44,6 +45,13 @@ MOB.Router = Backbone.Router.extend({
             title: '',
             text: ''
         });
+
+        this.render(MOB.addEditView);
+    },
+
+    editNote: function (noteId) {
+        MOB.addEditView = MOB.addEditView || new MOB.AddEditView;
+        MOB.addEditView.model = MOB.notes.get(noteId);
 
         this.render(MOB.addEditView);
     }

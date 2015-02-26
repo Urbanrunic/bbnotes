@@ -13,6 +13,11 @@ MOB.NotesListView = Backbone.View.extend({
     render: function () {
         this.$el.empty();
 
+        if (this.collection.length == 0) {
+            this.$el.append("<span>The list is empty</span>");
+            return this;
+        };
+
         this.collection.each(function (item) {
             this.$el.append(this.renderItem(item));
         }, this);
