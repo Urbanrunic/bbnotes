@@ -21,7 +21,8 @@ MOB.AddEditView = Backbone.View.extend({
         var text = this.$('.text').val().trim();
 
         if (!title || !text) {
-            return;
+            this.$el.append("<span class=invalid>Please fill in both fields. Thank you!</span>");
+            return this;
         }
 
         clearInputs = function () {
