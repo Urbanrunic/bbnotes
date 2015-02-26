@@ -11,6 +11,11 @@ MOB.NotesListItemView = Backbone.View.extend({
         'click .delete': 'delete'
     },
 
+    initialize: function(){
+      this.model.on('change', this.render, this);
+      this.model.on('destroy', this.remove, this);
+    },
+
     render: function () {
         this.$el.html(this.template(this.model.attributes));
 
@@ -18,7 +23,6 @@ MOB.NotesListItemView = Backbone.View.extend({
     },
 
     delete: function (e) {
-        this.remove();
-        this.unbind();
+        this.model.destroy();
     }
 });
