@@ -1,15 +1,15 @@
 <html ng-app=ang-bbnotes>
 
-    <title>Angular BB Notes</title>
+    <title ng-bind="$state.current.data.pageTitle"></title>
     <link rel=stylesheet type=text/css href=index.css>
     <link rel=stylesheet type=text/css href=frame/navbar.css>
     <link rel=stylesheet type=text/css href=notes/display/note-item.css>
 
     <nav class="global-nav-container clearfix">
         <ul class=global-nav>
-            <li class=nav-item><a class=nav-link ui-sref=home>Go home</a></li>
-            <li class=nav-item><a class=nav-link ui-sref=notes>View Notes</a></li>
-            <li class=nav-item><a class=nav-link ui-sref=notes.add>Add Note</a></li>
+            <li class=nav-item ui-sref-active=active><a class=nav-link ui-sref=home>Go home</a></li>
+            <li class=nav-item ui-sref-active=active><a class=nav-link ui-sref=notes>View Notes</a></li>
+            <li class=nav-item ui-sref-active=active><a class=nav-link ui-sref=notes.add>Add Note</a></li>
         </ul>
     </nav>
 

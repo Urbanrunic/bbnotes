@@ -4,16 +4,16 @@ These can be done in any order and don't depend on each other.
 If you get stuck on one, try moving on to another.
 
 1. Do not animate the same note in and out when you click
- to fetch notes
+ to fetch notes X
 2. Prevent editing an individual note from updating that
- note's title in the notes list
+ note's title in the notes list ?
 3. Prevent submission of an empty title/text note. You can
  do this with the Browser's built-in validation, but
- try to use Anglular's [very nice built-in form validation](https://docs.angularjs.org/guide/forms)
-4. When you finish editing or adding a note (i.e. it is
+ try to use Anglular's [very nice built-in form validation](https://docs.angularjs.org/guide/forms) X
+4. When you finish editing or adding a note (i.e. it is 
  saved to the server), redirect to the notes list.
  You can see how the Edit controller redirects when you try
- to view a note that does not exist.
+ to view a note that does not exist. X
 5. Use a directive to display the navigation bar
 6. Add a service that displays the current page you are
  viewing (outside of the main ui-view). You can use

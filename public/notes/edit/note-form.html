@@ -1,9 +1,10 @@
-<form ng-submit=note.save(note.note)>
-    <input ng-model=note.note.title>
+<form ng-submit=note.save(note.note) ng-class="{ 'has-error' : note.save.$invalid && !note.save.$pristine }">
+    <input ng-model=note.note.title required ng-minlength="1" ng-maxlength="10">
+    <p ng-show="note.save.$invalid && !note.save.$pristine" class="help-block">A note is required.</p>
 
     <br>
 
-    <textarea ng-model=note.note.text></textarea>
+    <textarea ng-model=note.note.text required></textarea>
 
     <br>
 

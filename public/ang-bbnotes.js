@@ -14,6 +14,7 @@ function ($stateProvider, $urlRouterProvider) {
             controller: "HomeController",
             controllerAs: "home",
             templateUrl: "home/home.html",
+            data: { pageTitle: 'Home' },
         })
         // List of notes page
         .state("notes", {
