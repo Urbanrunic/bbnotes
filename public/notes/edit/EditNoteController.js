@@ -8,6 +8,7 @@ function (notes, $stateParams, $state) {
     }
 
     this.note = note;
+    
 
     this.save = function (note) {
         note.save();

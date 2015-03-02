@@ -14,7 +14,9 @@ function ($stateProvider, $urlRouterProvider) {
             controller: "HomeController",
             controllerAs: "home",
             templateUrl: "home/home.html",
-            data: { pageTitle: 'Home' },
+            data: {
+                title: 'Welcome Home.'
+            }
         })
         // List of notes page
         .state("notes", {
@@ -22,21 +24,23 @@ function ($stateProvider, $urlRouterProvider) {
             controller: "NotesListController",
             controllerAs: "notesList",
             templateUrl: "notes/notes-list.html",
+            data : { pageTitle: 'Notes' },
         })
-            // Add a new note (must be before edit because otherwise the
-            // edit route will match first)
-            .state("notes.add", {
-                url: "/add",
-                controller: "AddNoteController",
-                controllerAs: "note",
-                templateUrl: "notes/edit/note-form.html",
-            })
-            // Edit an individual note
-            .state("notes.edit", {
-                url: "/:id",
-                controller: "EditNoteController",
-                controllerAs: "note",
-                templateUrl: "notes/edit/note-form.html",
-            })
+        // Add a new note (must be before edit because otherwise the
+        // edit route will match first)
+        .state("notes.add", {
+            url: "/add",
+            controller: "AddNoteController",
+            controllerAs: "note",
+            templateUrl: "notes/edit/note-form.html",
+            data : { pageTitle: 'Add Notes' },
+        })
+        // Edit an individual note
+        .state("notes.edit", {
+            url: "/:id",
+            controller: "EditNoteController",
+            controllerAs: "note",
+            templateUrl: "notes/edit/note-form.html",
+        })
     ;
 }]);
